@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "post"
+      ]
+    },
+    {
+      "type": "eventHub",
+      "name": "outputEventHubMessage",
+      "connection": "EventLoRaWANTest_RootManageSharedAccessKey_EVENTHUB",
+      "eventHubName": "tempinfo",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}

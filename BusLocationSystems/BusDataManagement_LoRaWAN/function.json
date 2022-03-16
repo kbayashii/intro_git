@@ -1,0 +1,90 @@
+{
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "myIoTHubMessage",
+      "direction": "in",
+      "eventHubName": "tempinfo",
+      "connection": "EventLoRaWANTest_RootManageSharedAccessKey_EVENTHUB",
+      "consumerGroup": "$Default",
+      "cardinality": "many"
+    },
+    {
+      "type": "table",
+      "name": "inputBusDelayTable",
+      "tableName": "BusDelayTableLPWA",
+      "take": 50,
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "type": "table",
+      "name": "inputBusLocationTable",
+      "tableName": "BusLocationTableLPWA",
+      "take": 50,
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "type": "table",
+      "name": "inputBusStopTable",
+      "tableName": "BusStopTable",
+      "take": 50,
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "type": "table",
+      "name": "inputLastRouteTable",
+      "tableName": "LastRouteTable",
+      "take": 50,
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "type": "table",
+      "name": "outputBusLocationTable",
+      "tableName": "BusLocationTableLPWA",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    },
+    {
+      "type": "table",
+      "name": "outputBusDelayTable",
+      "tableName": "BusDelayTableLPWA",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    },
+    {
+      "name": "outputBatteryInformationTable",
+      "tableName": "BatteryInformationTable",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out",
+      "type": "table"
+    },
+    {
+      "connection": "AzureWebJobsStorage",
+      "name": "outputAlertManagementTable",
+      "tableName": "AlertManagementTable",
+      "direction": "out",
+      "type": "table"
+    },
+    {
+      "connection": "AzureWebJobsStorage",
+      "name": "inputBatteryInformationTable",
+      "tableName": "BatteryInformationTable",
+      "take": 50,
+      "direction": "in",
+      "type": "table"
+    },
+    {
+      "name": "inputAlertManagementTable",
+      "direction": "in",
+      "type": "table",
+      "connection": "AzureWebJobsStorage",
+      "tableName": "AlertManagementTable",
+      "take": 50
+    }
+  ],
+  "disabled": false
+}
